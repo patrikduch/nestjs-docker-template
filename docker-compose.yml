@@ -1,0 +1,36 @@
+version: "3"
+
+services:
+  postgres:
+    container_name: postgres_db
+    image: postgres:13.1
+    restart: always
+    #environment:
+    #  - POSTGRES_USER=root
+    #  - POSTGRES_PASSWORD=root
+    #env_file: ./env/postgres.env
+    env_file:
+      - ./env/dbs/postgres.env
+    ports:
+      - 5432:5432
+    volumes:
+      # - postgres_volume:/var/lib/postgresql
+      - ./dbs/postgres/init.sql:/docker-entrypoint-initdb.d/docker_postgres_init.sql
+
+  adminer:
+    container_name: adminer_dashboard
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
+  nest:
+    container_name: nest_app
+    depends_on:
+      - postgres
+    build: .
+    volumes:
+      - .:/nest
+    ports:
+      - 3000:3000
+      - 9229:9229
+    tty: true
