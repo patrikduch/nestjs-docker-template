@@ -3,7 +3,6 @@ import {
     Get,
 } from "@nestjs/common";
 import { ApiTags } from "@nestjs/swagger";
-
 import { HttpResponse } from "../../shared/core/core.dtos";
 import { ProjectDetailItemDto } from "./dtos/project-detail-item.dto";
 import { ProjectDetailService } from "./projectdetail.service";
