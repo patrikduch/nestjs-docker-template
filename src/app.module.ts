@@ -8,10 +8,13 @@ import { UsersModule } from './modules/application/users/users.module';
 import { CoreModule } from './modules/shared/core/core.module';
 import { ProjectDetailSeeder } from './modules/application/projectdetail/projectdetail.seeder';
 import { ProjectDetailEntity } from './modules/application/projectdetail/projectdetail.entity';
-import { projectDetailData } from './modules/application/projectdetail/data/projectdetail.data';
 
 const ENV = process.env.NODE_ENV;
 
+/**
+ * @class AppModule Entry app module.
+ * @author Patrik Duch
+ */
 @Module({
   imports: [
     CoreModule,
@@ -38,13 +41,10 @@ const ENV = process.env.NODE_ENV;
 })
 export class AppModule implements OnApplicationBootstrap {
 
-
   constructor(
-    private readonly logger: Logger,
     private readonly projectdetailSeeder: ProjectDetailSeeder
 
   ) {}
-
 
   onApplicationBootstrap() {
     this.projectdetailSeeder.seed();
