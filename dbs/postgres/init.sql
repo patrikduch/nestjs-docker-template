@@ -3,4 +3,4 @@ CREATE TABLE projectdetail(
     projectname VARCHAR(50) NOT NULL
 );
 
-INSERT INTO projectdetail(id, projectname) VALUES (1, 'Test project with Nest.js by Patrik Duch');
+-- INSERT INTO projectdetail(id, projectname) VALUES (1, 'Test project with Nest.js by Patrik Duch');
