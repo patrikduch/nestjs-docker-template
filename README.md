@@ -57,6 +57,6 @@ yarn test or yarn test:watch
 ## Deployment
 
 
-docker build -t nestjs-restapi-template .
+docker build -t nestjs-docker-template .
 
 
