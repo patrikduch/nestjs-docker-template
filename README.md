@@ -12,7 +12,6 @@ Docker template for building modern webservices with Nest.js framework.
     <li>OpenAPI specification with Swagger</li>
 </ul>
 
-
 ## Environment setup
 
 With the following commands, create the directory (`.vscode`) and files for debugging.
@@ -25,6 +24,14 @@ yarn
 docker-compose up --build
 ```
 
+## Development
+
+### Third party libraries
+
+<ul>
+    <li>@nestjs/cqrs</li>
+</ul>
+
 ### Package state
 
 Check for outdated packages
@@ -32,7 +39,6 @@ Check for outdated packages
 ```
 yarn updated
 ```
-
 
 ## Debugging
 
@@ -44,7 +50,6 @@ docker-compose up
 
 - start up the Nodejs debugger
 
-
 ## Testing
 
 Execute all available tests via Jest test runner.
@@ -53,10 +58,6 @@ Execute all available tests via Jest test runner.
 yarn test or yarn test:watch
 ```
 
-
 ## Deployment
 
-
 docker build -t nestjs-docker-template .
-
-
