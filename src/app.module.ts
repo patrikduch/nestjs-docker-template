@@ -1,3 +1,4 @@
+import { ApolloDriver, ApolloDriverConfig } from "@nestjs/apollo";
 import { Logger, Module, OnApplicationBootstrap } from "@nestjs/common";
 import { ConfigModule } from "@nestjs/config";
 import { TypeOrmModule } from "@nestjs/typeorm";
@@ -22,7 +23,8 @@ const ENV = process.env.NODE_ENV;
       envFilePath: !ENV ? ".env" : `.env.${ENV}`,
       isGlobal: true, // shared for all modules
     }),
-    GraphQLModule.forRoot({
+    GraphQLModule.forRoot<ApolloDriverConfig>({
+      driver: ApolloDriver,
       debug: true,
       playground: true,
       autoSchemaFile: "schema.ggl",
