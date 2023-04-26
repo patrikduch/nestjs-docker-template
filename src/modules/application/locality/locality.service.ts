@@ -1,7 +1,7 @@
+import axios from "axios";
 import { HttpResponse } from "../../shared/core/core.dtos";
 import { LocalityDetailDto } from "./dtos/locality-detail.dto";
 import { Injectable } from "@nestjs/common";
-import axios from "axios";
 
 /**
  * @interface ILocalityService Contract interface for LocalityService.
