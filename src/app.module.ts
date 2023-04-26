@@ -9,6 +9,7 @@ import { UsersModule } from "./modules/application/users/users.module";
 import { CoreModule } from "./modules/shared/core/core.module";
 import { ProjectDetailSeeder } from "./modules/application/projectdetail/projectdetail.seeder";
 import { ProjectDetailEntity } from "./modules/application/projectdetail/projectdetail.entity";
+import { LocalityModule } from "./modules/application/locality/locality.module";
 
 const ENV = process.env.NODE_ENV;
 
@@ -31,6 +32,7 @@ const ENV = process.env.NODE_ENV;
     }),
     UsersModule,
     ProjectdetailModule,
+    LocalityModule,
     TypeOrmModule.forRootAsync(typeormConfigAsync),
     TypeOrmModule.forFeature([ProjectDetailEntity]),
     Logger,
