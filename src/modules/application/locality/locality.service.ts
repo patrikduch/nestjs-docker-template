@@ -11,7 +11,7 @@ export interface ILocalityService {
 }
 
 /**
- * @class ProjectDetailService
+ * @class LocalityService Obtaining locality info from IP addreses (ipV4).
  * @author Patrik Duch
  */
 @Injectable()
