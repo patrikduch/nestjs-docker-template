@@ -17,7 +17,9 @@ export class ProjectDetailSeeder {
   ) {}
   async seed() {
     return this.repository.findOne({
-      projectname:  projectDetailData.projectname
+      where: {
+        projectname: projectDetailData.projectname
+      }
     }).then((projectdetailDb) => {
       if (!projectdetailDb) {
        this.repository.save({

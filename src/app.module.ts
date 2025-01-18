@@ -35,7 +35,6 @@ const ENV = process.env.NODE_ENV;
     LocalityModule,
     TypeOrmModule.forRootAsync(typeormConfigAsync),
     TypeOrmModule.forFeature([ProjectDetailEntity]),
-    Logger,
   ],
 
   providers: [ProjectDetailSeeder, Logger],

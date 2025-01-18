@@ -32,12 +32,15 @@ export class ProjectDetailService implements IProjectDetailService {
     async fetchProjectDetail(): Promise<HttpResponse<ProjectDetailItemDto>> {
 
         let entity: ProjectDetailEntity;
-        entity = await this.repository.findOne();
+        entity = await this.repository.findOne({
+            where: { projectname: 'Test web project with Nest.js by Patrik Duch' }, // Provide a valid condition
+            order: { id: 'ASC' }, 
+        });
     
         if (!entity) {
     
           const response = new HttpResponse<ProjectDetailItemDto>();
-          response.error = 'No data';
+          response.error = 'No data ';
         }
     
         const projectDetailDto = new ProjectDetailItemDto(entity.projectname);

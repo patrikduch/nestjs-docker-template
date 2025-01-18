@@ -8,7 +8,6 @@ import { HttpResponse } from './core.dtos';
 
 @Module({
     providers: [HttpResponse],
-    imports: [HttpResponse],
     exports: [HttpResponse]
 })
 export class CoreModule {}
